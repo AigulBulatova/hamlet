@@ -12,7 +12,8 @@ struct String {
 
     char *string_ptr;
 };
-struct Hamlet {
+
+struct Text {
     int nlines;
     int size;
 
@@ -22,5 +23,10 @@ struct Hamlet {
 
 
 int file_size(FILE *stream);
+int get_buffer_to_text(Text *text, FILE *stream);
+int count_lines(Text *text);
+int get_buffer_to_strings(Text *text);
+int fill_strings_struct(Text *text);
+int text_print_to_file(Text *text, FILE *output);
 
 #endif
