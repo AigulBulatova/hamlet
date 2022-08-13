@@ -1,5 +1,4 @@
-#ifndef HAMLET_H
-#define HAMLET_H
+#pragma once
 
 #include <stdio.h>      
 #include <assert.h>
@@ -22,11 +21,9 @@ struct Text {
 };
 
 
-int file_size(FILE *stream);
+int file_size(Text *text, FILE *stream);
 int get_buffer_to_text(Text *text, FILE *stream);
 int count_lines(Text *text);
-int get_buffer_to_strings(Text *text);
+int string_alloc(Text *text);
 int fill_strings_struct(Text *text);
 int text_print_to_file(Text *text, FILE *output);
-
-#endif
