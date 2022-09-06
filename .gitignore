@@ -1,5 +1,3 @@
 1.txt
-hamlet.o
-main
-main.o
+obj/
 result.txt

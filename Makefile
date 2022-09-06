@@ -1,5 +1,6 @@
 OBJ   = obj/main.o      \
-		obj/hamlet.o  
+		obj/hamlet.o    \
+		obj/errors.o
 
 FLAGS = -lubsan -D NDEBUG -g -std=c++14 -fmax-errors=1 			  	\
 		-Wc++0x-compat -Wc++11-compat -Wc++14-compat  				\
@@ -34,15 +35,18 @@ FLAGS = -lubsan -D NDEBUG -g -std=c++14 -fmax-errors=1 			  	\
 all: global
 
 global: $(OBJ)
-	g++ $(OBJ) -o hamlet -lm $(FLAGS)
+	g++ $(OBJ) -o sort -lm $(FLAGS)
 
-obj/main.o: main.cpp hamlet/hamlet.h
+obj/main.o: main.cpp hamlet/hamlet.h 
 	g++ main.cpp -c -o obj/main.o $(FLAGS)
 
-obj/hamlet.o: hamlet/hamlet.cpp hamlet/hamlet.h
+obj/hamlet.o: hamlet/hamlet.cpp hamlet/hamlet.h errors/errors.h
 	g++ hamlet/hamlet.cpp -c -o obj/hamlet.o $(FLAGS)
+
+obj/errors.o: errors/errors.cpp errors/errors.h 
+	g++ errors/errors.cpp -c -o obj/errors.o $(FLAGS)
 
 .PHONY: cleanup
 
 cleanup:
-	rm *.0 hamlet
+	rm *.0 sort

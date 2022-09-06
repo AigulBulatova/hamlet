@@ -1,55 +1,53 @@
 #include "hamlet.h"
 #include "../errors/errors.h"
 
-int file_size(Text *text, FILE *stream)
+#include <assert.h>
+
+int file_size(Text *text, FILE *stream)      // return value = size
+                                             // remove Text
 {
-    if (text == NULL) {
-        return NULL_PTR;
-    }
-    if (stream == NULL) {
+    if (text == NULL || stream == NULL) {
         return NULL_PTR;
     }
  
-    int size = 0;
-
     if (fseek(stream, 0, SEEK_END)) {
         return FSEEK_ERROR;
     }
 
-    size = ftell(stream);
-
-    if (size == -1) {
+    long size = ftell(stream);               //  выровнять
+    if  (size == -1) {
         return FTELL_ERROR;
     }
 
-    text->size = size;
+    text->size = (size_t) size;
     rewind(stream);
 
     return 0;
 }
 
 //------------------------------------------------------------------
-int get_buffer_to_text(Text *text, FILE *stream) 
+
+int get_buffer_to_text(Text *text, FILE *stream)               //text_read_to_buf 
 {
     if (text == NULL) {
-        return NULL_PTR;
+        // ERR_MSG("Null ptr to text structure")
+        // return NULL_PTR:                                         // split err codes
     }
     if (stream == NULL) {
         return NULL_PTR;
     }
 
-    int size_ret = file_size(text, stream);
+    int size_ret = file_size(text, stream);                      /// / / / /// / / / ///
     if (size_ret) {
         return size_ret;
     }
 
     text->buffer = (char *) calloc(text->size + 1, sizeof(char));
-
     if (text->buffer == NULL) {
         return NO_MEMORY;
     }
 
-    int read = fread(text->buffer, sizeof(char), text->size, stream);
+    size_t read = fread(text->buffer, sizeof(char), text->size, stream);
     if (read != text->size) {
         return -1;
     }
@@ -58,9 +56,34 @@ int get_buffer_to_text(Text *text, FILE *stream)
     return 0;
 }
 
+// #ifdef LOGS
+
+//  #define LOGS_MSG(...) logs_msg_print(__FILE__, ___LINE__, __FUNCTION__, __VA_ARGS__)
+
+// #else
+
+// #define LOGS_MSG(...) 
+
+// #endif
+
+// LOG_MSG("Allocated buffer address is %p", buffer);
+// LOG_MSG("SIzeof of efemfem is %zd, sizeof(efemfem)");
+// #define LOG_MSG(...) logs_msg_print(__FILE__, __LINE__, __FUNCTION__, __VA_ARGS__)
+// log_msg_print()
+//
+// config.h #define LOGS
+// 
+// log_msg_print(...) -> stderr
+//
+// va_arg, vprintf, __VA_ARGS__
+//
+//  delete print_msg_err 
+//
+// ERR_MSG("Еуцалцуалу") -> вне зависимости от конфига
+// #define ERR_MSG(msg_str) fprintf(stderr, "Error on line %d in file %s in func %s: %s", __LINE__,...)
 //------------------------------------------------------------------
 
-int count_lines(Text *text)
+int count_lines(Text *text) //returning value is num of string, args: buffer
 {
     if (text == NULL) {
         return NULL_PTR;
@@ -72,19 +95,27 @@ int count_lines(Text *text)
         buffer++;
         text->nlines++;
     }
+    text->nlines++;
     
     return 0;
 }
-
+ 
 //------------------------------------------------------------------
 
 int string_alloc(Text *text)
 {
     if (text == NULL) {
+        // ERR_MSG("Text pointer is NULL"); -> 
         return NULL_PTR;
     }
 
-    text->strings = (String *) calloc(text->nlines, sizeof(String));
+    // fprintf(stderr, "text->nlines is %zd\n", (size_t)text->nlines);
+    text->strings = (String *) calloc((size_t)text->nlines, sizeof(String));
+
+    // printf("%ld\n", sizeof(text->strings));  // printf -> fprintf(stderr, ...)
+    // printf("%d\n", text->nlines);
+    // printf("%ld\n", sizeof(String));
+
     if (text->strings == NULL) {
         return NO_MEMORY;
     }
@@ -94,25 +125,28 @@ int string_alloc(Text *text)
 
 //------------------------------------------------------------------
 
-int fill_strings_struct(Text *text)
+int text_fill_strings(Text *text)
 {
     if (text == NULL) {
         return NULL_PTR;
     }
 
     String *cur_struct = text->strings;
-    char *cur_string = text->buffer;
+    char   *cur_string = text->buffer;
 
     for (int line_number = 0; line_number < text->nlines; line_number++) {
+        fprintf(stderr, "cur number is %d\n", line_number);
         cur_struct[line_number].number = line_number;
+        //printf("%d\n", cur_struct[line_number].number);
         cur_struct[line_number].string_ptr = cur_string;
         
         char *string_end = strchr(cur_string, '\n');
+
         *string_end = '\0';
         cur_struct[line_number].len = strlen(cur_string);
 
         cur_string = string_end + 1;
-        cur_struct++;
+        //cur_struct++;
     }
 
     return 0;
@@ -120,13 +154,15 @@ int fill_strings_struct(Text *text)
 
 //------------------------------------------------------------------
 
-int text_print_to_file(Text *text, FILE *output) 
+int text_print(Text *text, FILE *output) 
 {
     if (text == NULL) {
         return NULL_PTR;
     }
     if (output == NULL) {
-        return F_CLOSE_ERROR;
+        //ERR_MSG("FILE* output is NULL in text_print");
+        // return FILE_PTR_NULL_ERR;
+        return F_OUTPUT_ERROR;
     }
 
     String *cur_string = text->strings;
@@ -140,7 +176,7 @@ int text_print_to_file(Text *text, FILE *output)
 
 //------------------------------------------------------------------
 
-void struct_init(Text *text)
+void struct_init(Text *text) // -> text_ctor 
 {
     text->nlines  = 0;
     text->size    = 0;
@@ -150,13 +186,13 @@ void struct_init(Text *text)
 
 //------------------------------------------------------------------
 
-int text_processing(FILE *stream)
+int text_processing(FILE *stream)       // args: Text*, FILE* fpin
 {
     if (stream == NULL) {
         return F_OPEN_ERROR;
     }
     
-    Text text;
+    Text text = {};
     struct_init(&text);
 
     int get_buff_ret = get_buffer_to_text(&text, stream);
@@ -182,10 +218,21 @@ int text_processing(FILE *stream)
         print_err_msg(fill_strings_ret);
         return -1;
     }
+    FILE *result = fopen("result.txt", "r");
 
+    int text_print_ret = text_print_to_file(&text, result);
+    if(text_print_ret) {
+        print_err_msg(text_print_ret);
+        return -1;
+    }
 
+    fclose(result);       // -> close_file
+    fclose(stream);      
+    
+    free(text.strings);  // -> dtor
+    free(text.buffer);
 
-
+    return 0;
 
 }
 

@@ -1,13 +1,12 @@
 #pragma once
 
-enum errors {
-    NULL_PTR = 1,
-    NO_MEMORY = -2,
-    F_OPEN_ERROR = 3,
-    F_CLOSE_ERROR = 4,
-    FSEEK_ERROR,
-    FTELL_ERROR
-    
+enum Errors {          //
+    NULL_PTR_ERR   = -1,
+    NO_MEMORY_ERR  = -2,
+    F_OPEN_ERR     = -3,
+    F_OUTPUT_ERR   = -4,
+    FSEEK_ERR      = -5,
+    FTELL_ERR      = -6,
 };
 
 int print_err_msg(int error);
