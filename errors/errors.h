@@ -1,12 +1,37 @@
 #pragma once
 
-enum Errors {          //
-    NULL_PTR_ERR   = -1,
-    NO_MEMORY_ERR  = -2,
-    F_OPEN_ERR     = -3,
-    F_OUTPUT_ERR   = -4,
-    FSEEK_ERR      = -5,
-    FTELL_ERR      = -6,
+#include <stdio.h>
+#include <assert.h>
+
+//------------------------------------------------------------------
+
+#ifdef LOGS
+
+    #define log_message(...) print_log_message(__VA_ARGS__)
+
+#else
+
+    #define log_message(...)
+
+#endif
+
+//------------------------------------------------------------------
+
+#define ERR_MSG(msg_str) \
+        fprintf(stderr, "Error on line %d in file %s in function %s: %s\n", __LINE__, __FILE__, __FUNCTION__, msg_str)
+
+//------------------------------------------------------------------
+
+enum Errors {          
+    F_PTR_NULL_ERR   = -1,
+    S_PTR_NULL_ERR   = -2,
+    NO_MEMORY_ERR    = -3,
+    F_OPEN_ERR       = -4,
+    F_CLOSE_ERR      = -5,
+    FSEEK_ERR        = -6,
+    FTELL_ERR        = -7,
+    FREAD_ERR        = -8,
+    NULL_PTR_ERR     = -9
 };
 
-int print_err_msg(int error);
+void print_log_message (const char *format, ...);

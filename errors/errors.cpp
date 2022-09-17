@@ -1,36 +1,39 @@
 #include "errors.h"
-#include <stdio.h>
+#include "../general/general.h"
+#include <stdarg.h>
+#include <assert.h>
 
-int print_err_msg(int error) // + __FILE__ __LINE__ __FUNCTION__ -> define
+static FILE* log_file = NULL;
+// open_log_file -> open_file
+// close_log_file
 
-// PRINT_ERR_MSG(FOPEN_ERR) -> print_err_msg(FOPEN_ERR, __FILE__, ...)
-
+int open_log_file ()
 {
-    switch (error) {
-        case NULL_PTR: {
-            printf("Null pointer of file or structure.\n"); // -> fprintf(stderr, ...)
-            break;
-        }
-        case NO_MEMORY: {
-            printf("Can not allocate memory.\n");
-            break;
-        }
-        case F_OPEN_ERROR: {
-            printf("Can not open the file.\n");
-            break;
-        }
-        case F_OUTPUT_ERROR: {
-            printf("Can not open output file.\n");
-            break;
-        }
-        case FSEEK_ERROR: {
-            printf("Error in fseek()\n");
-            break;
-        }
-        default: {
-            // fprintf(stderr, "Unexpected error code.");
-        }
+    log_file = open_file ("errors/log_file.txt", "w");
+    if (log_file == NULL) {
+        ERR_MSG ("Can not open log file.");
+        return F_OPEN_ERR;
     }
     return 0;
+}
+
+//------------------------------------------------------------------
+
+void print_log_message (const char *format, ...)
+{
+    assert (format);
+
+    fprintf (log_file, "Log messade from file %s, line %d. \nFunction %s: ", __FILE__, __LINE__, __FUNCTION__);
+
+    va_list args = {};         
+    va_start (args, format);
+    vfprintf (log_file, format, args);
+    va_end(args);
+
+}
+
+int close_log_file ()
+{
+    
 }
 

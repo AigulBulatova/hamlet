@@ -3,6 +3,9 @@
 #include <stdio.h>      
 #include <stdlib.h>
 #include <string.h>
+#include <assert.h>
+
+//------------------------------------------------------------------
 
 struct String { 
     int number;
@@ -19,12 +22,22 @@ struct Text {
     String *strings;
 };
 
+//------------------------------------------------------------------
 
-int file_size(Text *text, FILE *stream);
-int get_buffer_to_text(Text *text, FILE *stream);
-int count_lines(Text *text);
-int string_alloc(Text *text);
-int fill_strings_struct(Text *text);
-void struct_init(Text *text);
-int text_print_to_file(Text *text, FILE *output);
-int text_processing(FILE *stream);
+size_t file_size        (FILE *stream);              
+
+int count_lines         (char *buffer);
+
+int text_read_to_buf (Text *text, FILE *stream);
+
+int string_alloc        (Text *text);
+
+int text_fill_strings   (Text *text);
+
+int text_print          (Text *text, FILE *output);
+
+void text_ctor          (Text *text);
+
+void text_dtor          (Text *text);
+
+int text_read           (Text *text, FILE *fpin);

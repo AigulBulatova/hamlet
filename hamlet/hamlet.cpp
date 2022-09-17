@@ -1,123 +1,112 @@
 #include "hamlet.h"
 #include "../errors/errors.h"
 
-#include <assert.h>
 
-int file_size(Text *text, FILE *stream)      // return value = size
-                                             // remove Text
+size_t file_size (FILE *stream)                 
 {
-    if (text == NULL || stream == NULL) {
-        return NULL_PTR;
+    if (stream == NULL) {
+        ERR_MSG ("File  pointer is NULL");
+        return F_PTR_NULL_ERR;
     }
  
-    if (fseek(stream, 0, SEEK_END)) {
-        return FSEEK_ERROR;
+    if (fseek (stream, 0, SEEK_END)) {
+        ERR_MSG ("Fseek error");
+        return FSEEK_ERR;
     }
 
-    long size = ftell(stream);               //  выровнять
+    long size = ftell (stream);            
     if  (size == -1) {
-        return FTELL_ERROR;
+        ERR_MSG ("Ftell error");
+        return FTELL_ERR;
     }
 
-    text->size = (size_t) size;
-    rewind(stream);
+    rewind (stream);
 
-    return 0;
+    return (size_t) size;
 }
 
 //------------------------------------------------------------------
 
-int get_buffer_to_text(Text *text, FILE *stream)               //text_read_to_buf 
+int text_read_to_buf (Text *text, FILE *stream)               
 {
-    if (text == NULL) {
-        // ERR_MSG("Null ptr to text structure")
-        // return NULL_PTR:                                         // split err codes
-    }
     if (stream == NULL) {
-        return NULL_PTR;
+        ERR_MSG ("File  pointer is NULL");
+        return F_PTR_NULL_ERR;                                        
+    }
+    if (text == NULL) {
+        ERR_MSG ("Text pointer is NULL"); 
+        return S_PTR_NULL_ERR;                                        
     }
 
-    int size_ret = file_size(text, stream);                      /// / / / /// / / / ///
-    if (size_ret) {
-        return size_ret;
-    }
+    text->size = file_size (stream);
+    if (text->size < 0) {
+        return (int) text->size;
+    }                 
 
-    text->buffer = (char *) calloc(text->size + 1, sizeof(char));
+    text->buffer = (char *) calloc (text->size + 1, sizeof(char));
+    
+    log_message ("Allocated text buffer address is %p\n", text->buffer);
+
     if (text->buffer == NULL) {
-        return NO_MEMORY;
+        ERR_MSG ("Can not allocate memory");
+        return NO_MEMORY_ERR;
     }
 
-    size_t read = fread(text->buffer, sizeof(char), text->size, stream);
+    size_t read = fread (text->buffer, sizeof(char), text->size, stream);
+
+    log_message ("%d symbols read by fread(). Size of the text is %d", read, text->size);
+
     if (read != text->size) {
-        return -1;
+        ERR_MSG ("Fread error");
+        return FREAD_ERR;
     }
     text->buffer[text->size] = '\0';
 
     return 0;
 }
 
-// #ifdef LOGS
-
-//  #define LOGS_MSG(...) logs_msg_print(__FILE__, ___LINE__, __FUNCTION__, __VA_ARGS__)
-
-// #else
-
-// #define LOGS_MSG(...) 
-
-// #endif
-
-// LOG_MSG("Allocated buffer address is %p", buffer);
-// LOG_MSG("SIzeof of efemfem is %zd, sizeof(efemfem)");
-// #define LOG_MSG(...) logs_msg_print(__FILE__, __LINE__, __FUNCTION__, __VA_ARGS__)
-// log_msg_print()
-//
-// config.h #define LOGS
-// 
-// log_msg_print(...) -> stderr
-//
-// va_arg, vprintf, __VA_ARGS__
-//
-//  delete print_msg_err 
-//
-// ERR_MSG("Еуцалцуалу") -> вне зависимости от конфига
-// #define ERR_MSG(msg_str) fprintf(stderr, "Error on line %d in file %s in func %s: %s", __LINE__,...)
 //------------------------------------------------------------------
 
-int count_lines(Text *text) //returning value is num of string, args: buffer
+int count_lines (char *buffer)
 {
-    if (text == NULL) {
-        return NULL_PTR;
+    if (buffer == NULL) {
+        ERR_MSG ("Buffer pointer is NULL");
+        return NULL_PTR_ERR;
     }
 
-    char *buffer = text->buffer;
+    int nlines = 0;
 
-    while ((buffer = strchr(buffer, '\n')) != NULL) {
+    while ((buffer = strchr (buffer, '\n')) != NULL) {
         buffer++;
-        text->nlines++;
-    }
-    text->nlines++;
+        nlines++;
+    }             
+
+    log_message ("Number of lines is %d", nlines);                  
     
-    return 0;
+    return nlines;
 }
  
-//------------------------------------------------------------------
+//------------------------------------------------------------------ 
 
-int string_alloc(Text *text)
+int string_alloc (Text *text)
 {
     if (text == NULL) {
-        // ERR_MSG("Text pointer is NULL"); -> 
-        return NULL_PTR;
+        ERR_MSG ("Text pointer is NULL");  
+        return S_PTR_NULL_ERR;
     }
 
-    // fprintf(stderr, "text->nlines is %zd\n", (size_t)text->nlines);
-    text->strings = (String *) calloc((size_t)text->nlines, sizeof(String));
+    int err = count_lines (text->buffer);
+    if (err < 0) return err;
 
-    // printf("%ld\n", sizeof(text->strings));  // printf -> fprintf(stderr, ...)
-    // printf("%d\n", text->nlines);
-    // printf("%ld\n", sizeof(String));
+    text->nlines = count_lines (text->buffer);
 
+    text->strings = (String *) calloc ((size_t)text->nlines, sizeof(String));
+
+    log_message ("Allocated array of strings address is %p", text->strings);
+    
     if (text->strings == NULL) {
-        return NO_MEMORY;
+        ERR_MSG ("Can not allocate memory");
+        return NO_MEMORY_ERR;
     }
 
     return 0;
@@ -125,28 +114,27 @@ int string_alloc(Text *text)
 
 //------------------------------------------------------------------
 
-int text_fill_strings(Text *text)
+int text_fill_strings (Text *text)
 {
     if (text == NULL) {
-        return NULL_PTR;
+        ERR_MSG ("Text pointer is NULL"); 
+        return S_PTR_NULL_ERR;
     }
 
-    String *cur_struct = text->strings;
-    char   *cur_string = text->buffer;
+    String *cur_string = text->strings;
+    char   *string_start = text->buffer;
 
-    for (int line_number = 0; line_number < text->nlines; line_number++) {
-        fprintf(stderr, "cur number is %d\n", line_number);
-        cur_struct[line_number].number = line_number;
-        //printf("%d\n", cur_struct[line_number].number);
-        cur_struct[line_number].string_ptr = cur_string;
+    for (int line_number = 0; line_number < text->nlines ; line_number++) {
+        cur_string[line_number].number = line_number;           
+        cur_string[line_number].string_ptr = string_start;   
+        cur_string[line_number].len = strlen (string_start);        
         
-        char *string_end = strchr(cur_string, '\n');
+        char *string_end = strchr (string_start, '\n');
+        if (!string_end) break;
 
         *string_end = '\0';
-        cur_struct[line_number].len = strlen(cur_string);
 
-        cur_string = string_end + 1;
-        //cur_struct++;
+        string_start = string_end + 1;
     }
 
     return 0;
@@ -154,21 +142,15 @@ int text_fill_strings(Text *text)
 
 //------------------------------------------------------------------
 
-int text_print(Text *text, FILE *output) 
+int text_print (Text *text, FILE *output) 
 {
-    if (text == NULL) {
-        return NULL_PTR;
-    }
-    if (output == NULL) {
-        //ERR_MSG("FILE* output is NULL in text_print");
-        // return FILE_PTR_NULL_ERR;
-        return F_OUTPUT_ERROR;
-    }
+    assert (output);
+    assert (text);
 
     String *cur_string = text->strings;
 
     for (int line_number = 0; line_number < text->nlines; line_number++) {
-        fprintf(output,"%s\n",cur_string[line_number].string_ptr);
+        fprintf (output,"%s\n",cur_string[line_number].string_ptr);
     }
     
     return 0;
@@ -176,8 +158,10 @@ int text_print(Text *text, FILE *output)
 
 //------------------------------------------------------------------
 
-void struct_init(Text *text) // -> text_ctor 
+void text_ctor (Text *text)  
 {
+    assert (text);
+
     text->nlines  = 0;
     text->size    = 0;
     text->buffer  = NULL;
@@ -186,53 +170,37 @@ void struct_init(Text *text) // -> text_ctor
 
 //------------------------------------------------------------------
 
-int text_processing(FILE *stream)       // args: Text*, FILE* fpin
+void text_dtor (Text *text)
 {
-    if (stream == NULL) {
-        return F_OPEN_ERROR;
-    }
-    
-    Text text = {};
-    struct_init(&text);
+    assert (text);
 
-    int get_buff_ret = get_buffer_to_text(&text, stream);
-    if (get_buff_ret) {
-        print_err_msg(get_buff_ret);
-        return -1;
-    }
+    free (text->buffer);
+    free (text->strings);
+}
 
-    int count_lines_ret = count_lines(&text);
-    if (count_lines_ret) {
-        print_err_msg(count_lines_ret);
-        return -1;
+//------------------------------------------------------------------
+
+int text_read (Text *text, FILE *fpin)       
+{
+    if (fpin == NULL) {
+        return F_PTR_NULL_ERR;
     }
 
-    int str_alloc_ret = string_alloc(&text);
+    int read_to_buff_ret = text_read_to_buf (text, fpin);
+    if (read_to_buff_ret < 0) {
+        return read_to_buff_ret;
+    }
+
+    int str_alloc_ret = string_alloc (text);
     if (str_alloc_ret) {
-        print_err_msg(str_alloc_ret);
-        return -1;
+        return str_alloc_ret;
     }
 
-    int fill_strings_ret = fill_strings_struct(&text);
+    int fill_strings_ret = text_fill_strings (text);
     if (fill_strings_ret) {
-        print_err_msg(fill_strings_ret);
-        return -1;
+        return fill_strings_ret;
     }
-    FILE *result = fopen("result.txt", "r");
-
-    int text_print_ret = text_print_to_file(&text, result);
-    if(text_print_ret) {
-        print_err_msg(text_print_ret);
-        return -1;
-    }
-
-    fclose(result);       // -> close_file
-    fclose(stream);      
-    
-    free(text.strings);  // -> dtor
-    free(text.buffer);
 
     return 0;
-
 }
 
