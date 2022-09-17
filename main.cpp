@@ -2,6 +2,7 @@
 #include "general/general.h"
 #include "errors/errors.h"
 #include "my_sort/my_sort.h"
+#include "configs.h"
 
 // 2) sorting -> 1) qsort 2)your own qsort (config.h <- #define USE_MY_OWN_QSORT) 
 // 3) comparator -> direct and reverse sort(.., comp)
@@ -16,7 +17,7 @@ int main()
     if (logs < 0) return logs;
 #endif
 
-    FILE* fpin = open_file ("txt/hamlet.txt", "r");
+    FILE* fpin = open_file ("txt/hamlet.txt", "rb");
     if (fpin == NULL) {
         ERR_MSG ("Can not open file");     
         return F_OPEN_ERR;
@@ -34,9 +35,9 @@ int main()
     if (err < 0) return err;
 
 //#ifdef USE_MY_SORT
-    //my_sort();
+    //my_sort(text.strings, text.nlines, sizeof(text.strings[0]), &straight_compare);
 //#else
-    qsort (text.strings, text.nlines, sizeof(text.strings[0]), &straight_compare);
+    qsort (text.strings, (size_t) text.nlines, sizeof(text.strings[0]), &reverse_compare);
 //#endif
 
     FILE* fpout = open_file ("txt/output.txt", "w");
@@ -51,10 +52,15 @@ int main()
     err = close_file (fpout);
     if (err < 0) return err;
 
-    int cmp = straight_compare (&text.strings[55], &text.strings[65]);
-    printf("%d\n", cmp);
+    //int cmp = reverse_compare (&text.strings[20], &text.strings[21]);
+    //printf("%d\n", cmp);
 
     text_dtor (&text);
+
+#ifdef LOGS
+    int close = close_log_file();
+    if (close < 0) return close;
+#endif
 
     return 0;
 }

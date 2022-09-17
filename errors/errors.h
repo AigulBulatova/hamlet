@@ -1,5 +1,7 @@
 #pragma once
 
+//------------------------------------------------------------------
+
 #include <stdio.h>
 #include <assert.h>
 
@@ -14,8 +16,6 @@
     #define log_message(...)
 
 #endif
-
-//------------------------------------------------------------------
 
 #define ERR_MSG(msg_str) \
         fprintf(stderr, "Error on line %d in file %s in function %s: %s\n", __LINE__, __FILE__, __FUNCTION__, msg_str)
@@ -34,4 +34,10 @@ enum Errors {
     NULL_PTR_ERR     = -9
 };
 
+//------------------------------------------------------------------
+
 void print_log_message (const char *format, ...);
+
+int open_log_file  ();
+
+int close_log_file ();

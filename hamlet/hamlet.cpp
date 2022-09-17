@@ -1,6 +1,8 @@
 #include "hamlet.h"
 #include "../errors/errors.h"
+#include "../configs.h"
 
+//------------------------------------------------------------------
 
 size_t file_size (FILE *stream)                 
 {
@@ -126,15 +128,20 @@ int text_fill_strings (Text *text)
 
     for (int line_number = 0; line_number < text->nlines ; line_number++) {
         cur_string[line_number].number = line_number;           
-        cur_string[line_number].string_ptr = string_start;   
-        cur_string[line_number].len = strlen (string_start);        
-        
-        char *string_end = strchr (string_start, '\n');
-        if (!string_end) break;
+        cur_string[line_number].string_ptr = string_start; 
 
-        *string_end = '\0';
+        char *end = strchr (string_start, '\r');
+        char *n = strchr (string_start, '\n');
 
-        string_start = string_end + 1;
+        *end = '\0';
+        *n = '\0';
+        if (!n) break;
+
+        cur_string[line_number].len = strlen (string_start);
+        //printf("%d\n", cur_string[line_number].len);
+        //printf("%s\n", cur_string[line_number].string_ptr);
+
+        string_start = n + 1;
     }
 
     return 0;
@@ -150,7 +157,7 @@ int text_print (Text *text, FILE *output)
     String *cur_string = text->strings;
 
     for (int line_number = 0; line_number < text->nlines; line_number++) {
-        fprintf (output,"%s\n",cur_string[line_number].string_ptr);
+        fprintf (output,"%s\n", cur_string[line_number].string_ptr);
     }
     
     return 0;

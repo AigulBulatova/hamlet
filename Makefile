@@ -39,10 +39,10 @@ all: global
 global: $(OBJ)
 	g++ $(OBJ) -o sort -lm $(FLAGS)
 
-obj/main.o: main.cpp hamlet/hamlet.h general/general.h errors/errors.h
+obj/main.o: main.cpp hamlet/hamlet.h general/general.h errors/errors.h configs.h
 	g++ main.cpp -c -o obj/main.o $(FLAGS)
 
-obj/hamlet.o: hamlet/hamlet.cpp hamlet/hamlet.h errors/errors.h
+obj/hamlet.o: hamlet/hamlet.cpp hamlet/hamlet.h errors/errors.h configs.h
 	g++ hamlet/hamlet.cpp -c -o obj/hamlet.o $(FLAGS)
 
 obj/errors.o: errors/errors.cpp errors/errors.h general/general.h

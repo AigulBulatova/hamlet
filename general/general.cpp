@@ -1,6 +1,8 @@
 #include "general.h"
 #include "../errors/errors.h"
 
+//------------------------------------------------------------------
+
 FILE *open_file (const char *filename, const char *mode)
 {
     if (filename == NULL) {

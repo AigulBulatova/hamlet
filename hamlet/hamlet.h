@@ -1,5 +1,7 @@
 #pragma once
 
+//------------------------------------------------------------------
+
 #include <stdio.h>      
 #include <stdlib.h>
 #include <string.h>
@@ -23,12 +25,11 @@ struct Text {
 };
 
 //------------------------------------------------------------------
-
 size_t file_size        (FILE *stream);              
 
 int count_lines         (char *buffer);
 
-int text_read_to_buf (Text *text, FILE *stream);
+int text_read_to_buf    (Text *text, FILE *stream);
 
 int string_alloc        (Text *text);
 
