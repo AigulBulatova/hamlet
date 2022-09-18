@@ -56,7 +56,7 @@ int text_read_to_buf (Text *text, FILE *stream)
 
     size_t read = fread (text->buffer, sizeof(char), text->size, stream);
 
-    log_message ("%d symbols read by fread(). Size of the text is %d", read, text->size);
+    log_message ("%d symbols read by fread(). Size of the text is %d\n", read, text->size);
 
     if (read != text->size) {
         ERR_MSG ("Fread error");
@@ -83,7 +83,7 @@ int count_lines (char *buffer)
         nlines++;
     }             
 
-    log_message ("Number of lines is %d", nlines);                  
+    log_message ("Number of lines is %d\n", nlines);                  
     
     return nlines;
 }
@@ -104,7 +104,7 @@ int string_alloc (Text *text)
 
     text->strings = (String *) calloc ((size_t)text->nlines, sizeof(String));
 
-    log_message ("Allocated array of strings address is %p", text->strings);
+    log_message ("Allocated array of strings address is %p\n", text->strings);
     
     if (text->strings == NULL) {
         ERR_MSG ("Can not allocate memory");
@@ -138,8 +138,6 @@ int text_fill_strings (Text *text)
         if (!n) break;
 
         cur_string[line_number].len = strlen (string_start);
-        //printf("%d\n", cur_string[line_number].len);
-        //printf("%s\n", cur_string[line_number].string_ptr);
 
         string_start = n + 1;
     }
@@ -191,6 +189,9 @@ int text_read (Text *text, FILE *fpin)
 {
     if (fpin == NULL) {
         return F_PTR_NULL_ERR;
+    }
+    if (text == NULL) {
+        return S_PTR_NULL_ERR;
     }
 
     int read_to_buff_ret = text_read_to_buf (text, fpin);

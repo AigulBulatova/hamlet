@@ -45,7 +45,7 @@ obj/main.o: main.cpp hamlet/hamlet.h general/general.h errors/errors.h configs.h
 obj/hamlet.o: hamlet/hamlet.cpp hamlet/hamlet.h errors/errors.h configs.h
 	g++ hamlet/hamlet.cpp -c -o obj/hamlet.o $(FLAGS)
 
-obj/errors.o: errors/errors.cpp errors/errors.h general/general.h
+obj/errors.o: errors/errors.cpp errors/errors.h general/general.h 
 	g++ errors/errors.cpp -c -o obj/errors.o $(FLAGS)
 
 obj/general.o: general/general.cpp general/general.h
@@ -53,6 +53,7 @@ obj/general.o: general/general.cpp general/general.h
 
 obj/my_sort.o: my_sort/my_sort.cpp my_sort/my_sort.h hamlet/hamlet.h
 	g++ my_sort/my_sort.cpp -c -o obj/my_sort.o $(FLAGS)
+
 .PHONY: cleanup
 
 cleanup:

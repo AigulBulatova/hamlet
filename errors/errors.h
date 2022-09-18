@@ -7,9 +7,13 @@
 
 //------------------------------------------------------------------
 
+#include "../configs.h"
+
+//------------------------------------------------------------------
+
 #ifdef LOGS
 
-    #define log_message(...) print_log_message(__VA_ARGS__)
+    #define log_message(...) print_log_message(__LINE__, __FILE__, __FUNCTION__, __VA_ARGS__)
 
 #else
 
@@ -36,7 +40,7 @@ enum Errors {
 
 //------------------------------------------------------------------
 
-void print_log_message (const char *format, ...);
+void print_log_message (const unsigned int line, const char* file, const char* func, const char *format, ...);
 
 int open_log_file  ();
 

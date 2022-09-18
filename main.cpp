@@ -4,18 +4,14 @@
 #include "my_sort/my_sort.h"
 #include "configs.h"
 
-// 2) sorting -> 1) qsort 2)your own qsort (config.h <- #define USE_MY_OWN_QSORT) 
-// 3) comparator -> direct and reverse sort(.., comp)
-// 4) number -> sort as it was <- comparator(number) (hint: dont use strcmp)
-// 5) open_file, close_file <- errno, strerror 
-// 6) argc, argv -> filename input, output
-
 int main()
 {
-#ifdef LOGS 
-    int logs = open_log_file ();
-    if (logs < 0) return logs;
-#endif
+    #ifdef LOGS 
+        
+        int logs = open_log_file ();
+        if (logs < 0) return logs;
+    
+    #endif
 
     FILE* fpin = open_file ("txt/hamlet.txt", "rb");
     if (fpin == NULL) {
@@ -34,33 +30,35 @@ int main()
     err = close_file (fpin);
     if (err < 0) return err;
 
-//#ifdef USE_MY_SORT
-    //my_sort(text.strings, text.nlines, sizeof(text.strings[0]), &straight_compare);
-//#else
-    qsort (text.strings, (size_t) text.nlines, sizeof(text.strings[0]), &reverse_compare);
-//#endif
-
-    FILE* fpout = open_file ("txt/output.txt", "w");
-    if (fpout == NULL) {
+    FILE* fpdir = open_file ("txt/direct_sorted.txt", "w");
+    if (fpdir == NULL) {
         ERR_MSG ("Can not open output file");
         return F_OPEN_ERR;
     }
 
-    err = text_print (&text, fpout);
+    FILE* fprev = open_file ("txt/reverse_sorted.txt", "w");
+    if (fprev == NULL) {
+        ERR_MSG ("Can not open output file");
+        return F_OPEN_ERR;
+    }
+
+    err = text_sort_and_print (&text, fpdir, fprev);
     if (err < 0) return err;
 
-    err = close_file (fpout);
+    err = close_file (fpdir);
     if (err < 0) return err;
 
-    //int cmp = reverse_compare (&text.strings[20], &text.strings[21]);
-    //printf("%d\n", cmp);
+    err = close_file (fprev);
+    if (err < 0) return err;
 
     text_dtor (&text);
 
-#ifdef LOGS
-    int close = close_log_file();
-    if (close < 0) return close;
-#endif
+    #ifdef LOGS
+
+        int close = close_log_file();
+        if (close < 0) return close;
+
+    #endif
 
     return 0;
 }

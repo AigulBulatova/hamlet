@@ -6,8 +6,8 @@
 //------------------------------------------------------------------
 
 static FILE* log_file = NULL;
-// open_log_file -> open_file
-// close_log_file
+
+//------------------------------------------------------------------
 
 int open_log_file ()
 {
@@ -21,12 +21,12 @@ int open_log_file ()
 
 //------------------------------------------------------------------
 
-void print_log_message (const char *format, ...)
+void print_log_message (const unsigned int line, const char* file, const char* func, const char *format, ...)
 {
     assert (format);
 
-    fprintf (log_file, "Log messade from file %s, line %d. \nFunction %s: ",
-                         __FILE__, __LINE__, __FUNCTION__);
+    fprintf (log_file, "Log messade from file %s, line %ud. Function %s: ",
+                         file, line, func);
 
     va_list args = {};         
     va_start (args, format);
@@ -34,6 +34,8 @@ void print_log_message (const char *format, ...)
     va_end(args);
 
 }
+
+//------------------------------------------------------------------
 
 int close_log_file ()
 {
