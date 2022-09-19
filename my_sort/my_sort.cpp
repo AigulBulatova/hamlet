@@ -1,4 +1,3 @@
-#include <ctype.h>
 #include "my_sort.h"
 #include "../hamlet/hamlet.h"
 #include "../configs.h"
@@ -19,35 +18,20 @@ int direct_compare (const void *str1, const void *str2)
     int i = 0;
     int j = 0;
 
-    if (string1[i] == '\0' || string2[j] == '\0') {
-        return string2[j] - string1[i];
-    }
-
     while (string1[i] != '\0' || string2[j] != '\0') {
+
+        if (string1[i] == '\0' || string2[j] == '\0') {
+            return string2[j] - string1[i];
+        }
+
         if (!isalpha (string1[i])) {
-            if (string1[i] == '\0' && string2[j] != '\0') {
-            return 1;
-            }
-            else if(string1[i] == '\0') {
-                break;
-            }
-            else {
             i++;
             continue;
-            }
         }
 
         if (!isalpha (string2[j])) {
-            if (string2[j] == '\0' && string1[i] != '\0') {
-            return -1;
-            }
-            else if(string2[j] == '\0') {
-                break;
-            }
-            else {
             j++;
             continue;
-            }
         }
 
         int upper_c1 = toupper (string1[i]);
@@ -86,30 +70,15 @@ int reverse_compare (const void *str1, const void *str2)
     }
 
     while (i >= 0 && j >= 0) {
+
         if (!isalpha (string1[i])) {
-            if (i < 0 && j >= 0) {
-                return 1;
-            }
-            else if (i < 0) {
-                break;
-            }
-            else {
-                i--;
-                continue;
-            }
+            i--;
+            continue;
         }
 
         if (!isalpha (string2[j])) {
-            if (j < 0 && i >= 0) {
-                return -1;
-            }
-            else if (j < 0) {
-                break;
-            }
-            else {
-                j--;
-                continue;
-            }
+            j--;
+            continue;
         }
 
         int upper_c1 = toupper (string1[i]);
@@ -127,21 +96,35 @@ int reverse_compare (const void *str1, const void *str2)
     return 0;
 }
 
+//------------------------------------------------------------------
+
 int text_sort_and_print (Text *text, FILE *direct, FILE *reverse)
 {
+    assert (text);
+    assert (direct);
+    assert (reverse);
+
     #ifdef USE_MY_SORT
-        my_qsort (text->strings, text->nlines,sizeof(text->strings[0]), &direct_compare);
+
+        my_qsort (text->strings, text->nlines, sizeof(text->strings[0]), &direct_compare);
+   
     #else
+      
         qsort (text->strings, (size_t) text->nlines, sizeof(text->strings[0]), &direct_compare);
+   
     #endif
 
         int print = text_print (text, direct);
         if (print < 0) return print;
 
     #ifdef USE_MY_SORT
+      
         my_qsort (text->strings, text->nlines,sizeof(text->strings[0]), &reverse_compare);
+  
     #else
+  
         qsort (text->strings, (size_t) text->nlines, sizeof(text->strings[0]), &reverse_compare);
+  
     #endif
 
         print = text_print (text, reverse);
@@ -152,8 +135,8 @@ int text_sort_and_print (Text *text, FILE *direct, FILE *reverse)
 
 //------------------------------------------------------------------
 
-long my_partition (char* base, long left, long right, long size, int (*compare) (const void*, const void*)) {
-
+long my_partition (char* base, long left, long right, long size, int (*compare) (const void*, const void*)) 
+{
 	char* pivot = base + right;
 	long i = left - size;
 
@@ -166,12 +149,13 @@ long my_partition (char* base, long left, long right, long size, int (*compare) 
 		}
 	}
 	swap (base + i + size, base + right, (size_t) size);
+
 	return (i + size);
 }
 
 //------------------------------------------------------------------
 
-void my_qsort (void *base_el, long n, long size, int (*cmp) (const void* , const void* )) 
+void my_qsort (void *base_el, long n, long size, int (*compare) (const void* , const void* )) 
 {
 
 	char* base = (char*) base_el;
@@ -180,21 +164,21 @@ void my_qsort (void *base_el, long n, long size, int (*cmp) (const void* , const
 
 	if (n < 2) return;
 
-	long pi = my_partition (base, left, right, size, cmp);
+	long pi = my_partition (base, left, right, size, compare);
 
-	my_qsort ((void*)base, (pi - left)/size, size, cmp);
-	my_qsort ((void*)(base + pi + size), (right - pi)/size, size, cmp);
+	my_qsort ((void*)base, (pi - left)/size, size, compare);
+	my_qsort ((void*)(base + pi + size), (right - pi)/size, size, compare);
 }
 
 //------------------------------------------------------------------
 
-void swap (char* first, char* second, size_t size) {         
-
-	assert (first != NULL);
-	assert (second != NULL);
+void swap (char* first, char* second, size_t size) 
+{         
+	assert (first);
+	assert (second);
 
 	char* temp = (char*) calloc (1, size);
-	assert (temp != NULL);
+	assert (temp);
 
 	memcpy (temp, first, size);
 	memcpy (first, second, size);

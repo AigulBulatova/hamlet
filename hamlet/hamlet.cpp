@@ -35,6 +35,7 @@ int text_read_to_buf (Text *text, FILE *stream)
         ERR_MSG ("File  pointer is NULL");
         return F_PTR_NULL_ERR;                                        
     }
+
     if (text == NULL) {
         ERR_MSG ("Text pointer is NULL"); 
         return S_PTR_NULL_ERR;                                        
@@ -97,8 +98,7 @@ int string_alloc (Text *text)
     }
 
     int nlines = count_lines (text->buffer);
-    if (nlines < 0)
-        return nlines;
+    if (nlines < 0) return nlines;
     
     text->nlines = nlines;
 
@@ -126,6 +126,7 @@ int text_fill_strings (Text *text)
     char   *string_start = text->buffer;
 
     for (int line_number = 0; line_number < text->nlines ; line_number++) {
+        
         cur_string[line_number].number = line_number;           
         cur_string[line_number].string_ptr = string_start; 
 
@@ -134,7 +135,6 @@ int text_fill_strings (Text *text)
 
         *end = '\0';
         *n = '\0';
-        if (!n) break;
 
         cur_string[line_number].len = strlen (string_start);
 
@@ -189,6 +189,7 @@ int text_read (Text *text, FILE *fpin)
     if (fpin == NULL) {
         return F_PTR_NULL_ERR;
     }
+
     if (text == NULL) {
         return S_PTR_NULL_ERR;
     }

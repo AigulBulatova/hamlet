@@ -1,6 +1,7 @@
+  
     What's Hecuba to him, or he to Hecuba,
-    For Hecuba!
     Hecuba.
+    For Hecuba!
     of his action of battery? Hum! This fellow might be in's time a
     That beetles o'er his base into the sea,
     That looks so many fadoms to the sea
@@ -18,12 +19,12 @@ Enter Laertes and Ophelia.
   Laer. Too much of water hast thou, poor Ophelia,
     Dear maid, kind sister, sweet Ophelia!
     Affront Ophelia.  
-  King. Pretty Ophelia!
-      Ophelia,'-
   Queen. Nay, but Ophelia-
     Than may be given you. In few, Ophelia,
     Sprung from neglected love.- How now, Ophelia?
   Queen. How now, Ophelia?
+  King. Pretty Ophelia!
+      Ophelia,'-
     speak. 'Sblood, do you think I am easier to be play'd on than a
   Other. Will you ha' the truth an't? If this had not been a
     obligation of our ever-preserved love, and by what more dear a
@@ -204,12 +205,12 @@ Enter Laertes and Ophelia.
   Ros. Happily he's the second time come to them; for they say an old
     An understanding simple and unschool'd;
     And you, my sinews, grow not instant old,
+    world.
     I do not know from what part of the world
   Laer. My will, not all the world!
     And let me speak to the yet unknowing world
     Seem to me all the uses of this world!
     In the corrupted currents of this world
-    world.
   Ham. The phrase would be more germane to the matter if we could
     No hat upon his head, his stockings foul'd,
     As 'Well, well, we know,' or 'We could, an if we would,'
@@ -237,8 +238,8 @@ Enter Laertes and Ophelia.
     Thus set it down: he shall with speed to England
   Ham. Ay, marry, why was be sent into England?
     into England.
-    For England.
     one flesh; and so, my mother. Come, for England!
+    For England.
   Ham. I see a cherub that sees them. But come, for England!
   Ham. For England?
     The present death of Hamlet. Do it, England;  
@@ -269,6 +270,8 @@ Enter Laertes and Ophelia.
     died. They say he made a good end.
 THE END
     No more; and by a sleep to say we end
+      For who not needs shall never lack a friend,
+    For loan oft loses both itself and friend,
     And You must put me in your heart for friend,
     your friend.
     And each particular hair to stand an end
@@ -276,11 +279,9 @@ THE END
     I, his sole son, do this same villain send
     As make your bouts more violent to that end-
       And hitherto doth love on fortune tend,
-    end.
-      For who not needs shall never lack a friend,
-    For loan oft loses both itself and friend,
   Queen. Mad as the sea and wind when both contend
   Pol. The time invites you. Go, your servants tend.
+    end.
   King. Love? his affections do not that way tend;  
     And carriage of the article design'd,
     That have a father klll'd, a mother stain'd,
@@ -296,8 +297,8 @@ THE END
     With all the strength and armour of the mind
     Take these again; for to the noble mind
     lungs are tickle o' th' sere; and the lady shall say her mind
-    mind.
     The flash and outbreak of a fiery mind,
+    mind.
     Too slightly timber'd for so loud a wind,
     And for his death no wind
     To quit him with this arm? And is't not to be damn'd
@@ -636,8 +637,8 @@ Dramatis Personae
   Ham. I am tame, sir; pronounce.
     It shall as level to your judgment pierce
     And what's in prayer but this twofold force,
-         O, a Pit of clay for to be made  
     [Sings] O, a pit of clay for to be made
+         O, a Pit of clay for to be made  
       The instant burst of clamour that she made
     Till of this flat a mountain you have made
     wantonness your ignorance. Go to, I'll no more on't! it hath made
@@ -687,18 +688,18 @@ Dramatis Personae
   Hor. What is it you will see?
     To keep those many many bodies safe
     In thee there is not half an hour of life.
-    guilty of his own death shortens not his own life.  
-  Hor. It was, as I have seen it in his life,
-    life,
     That makes calamity of so long life.
+    guilty of his own death shortens not his own life.  
     Upon whose property and most dear life
     Thrown out his angle for my Proper life,
     yet? Then there's hope a great man's memory may outlive his life
+  Hor. It was, as I have seen it in his life,
     Should be as mortal as an old man's life?
     The serpent that did sting thy father's life
     Or if thou hast uphoarded in thy life
     Pursued my life.
     With, hoo! such bugs and goblins in my life-
+    life,
     Unto young Hamlet; for, upon my life,
     To grunt and sweat under a weary life,
       Both here and hence pursue me lasting strife,
@@ -773,11 +774,11 @@ Enter Fortinbras with his Army over the stage.
     is but variable service- two dishes, but to one table. That's the
     when I shall (first asking your pardon thereunto) recount the
   Ham. That skull had a tongue in it, and could sing once. How the
-    he.
     of our fellowship, by the consonancy of our youth, by the
     ladyship is nearer to heaven than when I saw you last by the
     seems to me a sterile promontory; this most excellent canopy, the
     Horatio. A fellow of infinite jest, of most excellent fancy. He
+    he.
     Thou know'st 'tis common. All that lives must die,
     Hath turn'd itself on me. Lo, here I lie,
     With arms encumb'red thus, or this head-shake,
@@ -811,8 +812,8 @@ Enter Fortinbras with his Army over the stage.
   Hor. Is't possible?
          Black as his purpose, did the night resemble
     The heyday in the blood is tame, it's humble,
-    My uncle?
     Would have mourn'd longer) married with my uncle;  
+    My uncle?
   Ham. They are coming to the play. I must be idle.  
     I had not quoted him. I fear'd he did but trifle
     Woo't drink up esill? eat a crocodile?
@@ -841,10 +842,10 @@ Elsinore. A passage in the Castle.
 Elsinore. A room of state in the Castle.
 Elsinore. A hall in the Castle.
 Elsinore. hall in the Castle.
+Elsinore. A room in the Castle.
+Elsinore. A room in the Castle.
+Elsinore. A room in the Castle.
 A room in the Castle.
-Elsinore. A room in the Castle.
-Elsinore. A room in the Castle.
-Elsinore. A room in the Castle.
 Elsinore. A room in the Castle.
 Elsinore. A room in the Castle.
 Elsinore. Another room in the Castle.
@@ -923,10 +924,10 @@ Elsinore. Another room in the Castle.
   Hor. Have after. To what issue wail this come?
   Ghost. My hour is almost come,
     But come!
-    Come.
   Ham. He will stay till you come.
     For in that sleep of death what dreams may come
   Ham. But soft! What noise? Who calls on Hamlet? O, here they come.
+    Come.
     Will return'd shall know you are come home.
     Her maiden strewments, and the bringing home
     To hear the process. I'll warrant she'll tax him home;
@@ -974,13 +975,13 @@ Elsinore. Another room in the Castle.
   King. Stay, give me drink. Hamlet, this pearl is thine;
     I'll do't. Dost thou come here to whine?
     I made to her in marriage, and to decline
+    To those of mine!
     And I do think- or else this brain of mine
     I have a daughter (have while she is mine),
   Ham. It will be short; the interim is mine,
     For my part, I do not lie in't, yet it is mine.
-    mine.
-    To those of mine!
     The thin and wholesome blood. So did it mine;
+    mine.
               To be your Valentine.
     Like quills upon the fretful porpentine.
     Whiles, like a puff'd and reckless libertine,
@@ -1098,22 +1099,22 @@ by William Shakespeare
     To keep itself from noyance; but much more
   Ham. You cannot, sir, take from me anything that I will more
     And from his mouth whose voice will draw on more.
-    eyes. Prithee no more!
-  Laer. Think it no more.
-    Be but to sleep and feed? A beast, no more.
-    No more.
          'One fair daughter, and no more,
+    eyes. Prithee no more!
   Queen. O, speak to me no more!
   Queen. O Hamlet, speak no more!
   Queen. No more!
+    No more.
+  Laer. Think it no more.
+    Be but to sleep and feed? A beast, no more.
     And think it pastime. You shortly shall hear more.
     Makes vow before his uncle never more
   Ham. The concernancy, sir? Why do we wrap the gentleman in our more
 SCENE.- Elsinore.
     But what is your affair in Elsinore?
-    Elsinore.
 Near Elsinore.
     make you at Elsinore?
+    Elsinore.
     Within the centre.
     The terms of our estate may not endure
     And pity 'tis 'tis true. A foolish figure!
@@ -1164,9 +1165,9 @@ Near Elsinore.
     As my great power thereof may give thee sense,
     Or but a sickly part of one true sense
     As any the most vulgar thing to sense,
+    Whose wicked deed thy most ingenious sense
     Else could you not have motion; but sure that sense
     sense.
-    Whose wicked deed thy most ingenious sense
     That it is proof and bulwark against sense.
     Hast ta'en with equal thanks; and blest are those
     in my imagination it is! My gorge rises at it. Here hung those
@@ -1259,13 +1260,13 @@ Near Elsinore.
     Who was in life a foolish peating knave.
     But he's an arrant knave.
     Why, what an ass am I! This is most brave,
+  Hor. There needs no ghost, my lord, come from the grave
                                              Leaps in the grave.
     To outface me with leaping in her grave?
-    And not have strew'd thy grave.
-                                                         grave.]
-  Hor. There needs no ghost, my lord, come from the grave
     Is now most still, most secret, and most grave,
+    And not have strew'd thy grave.
   Ham. Into my grave?
+                                                         grave.]
   Pol. It shall do well. But yet do I believe
   Hor. Before my God, I might not this believe
     reckon my groans; but that I love thee best, O most best, believe
@@ -1301,8 +1302,8 @@ Near Elsinore.
     If thou didst ever thy dear father love-
     More grief to hide than hate to utter love.
     This mad young man. But so much was our love
-    his love.
     Receiv'd his love?
+    his love.
   Ham. As woman's love.
     From the fair forehead of an innocent love,
   Oph. There's rosemary, that's for remembrance. Pray you, love,
@@ -1431,21 +1432,21 @@ Near Elsinore.
     They cry 'Choose we! Laertes shall be king!'
     Comes armed through our watch, so like the King
   Mar. Is it not like the King?
+    There is a play to-night before the King.
   Ber. Long live the King!
   Pol. Come, go with me. I will go seek the King.
   Ham. An earnest conjuration from the King,
-    But soft! but soft! aside! Here comes the King-
-  Ham. Nay, I know not. Is it the King?
-    the King.
-    There is a play to-night before the King.
     To lack discretion. Come, go we to the King.
     This is one Lucianus, nephew to the King.
+    But soft! but soft! aside! Here comes the King-
     Then, venom, to thy work.                    Hurts the King.
+  Ham. Nay, I know not. Is it the King?
+    the King.
     O thou vile king,
   For. Go, Captain, from me greet the Danish king.
     Enter [priests with] a coffin [in funeral procession], King,
-                    Enter King.
 Enter King.
+                    Enter King.
     As 'twere a thing a little soil'd i' th' working,
     That shall not be my offer, not thy asking?
     'Laertes shall be king! Laertes king!'
@@ -1802,7 +1803,6 @@ THE TRAGEDY OF HAMLET, PRINCE OF DENMARK
   Other. Marry, now I can tell!
   Other. Mass, I cannot tell.
     Let me not burst in ignorance, but tell
-    Farewell.
   Laer. My necessaries are embark'd. Farewell.
     for England. Of them I have much to tell thee. Farewell.
     nowhere but in's own house. Farewell.
@@ -1811,6 +1811,7 @@ THE TRAGEDY OF HAMLET, PRINCE OF DENMARK
   Queen. Sweets to the sweet! Farewell.
   Ham. Your loves, as mine to you. Farewell.
   King. We doubt it nothing. Heartily farewell.
+    Farewell.
   Pol. God b' wi' ye, fare ye well!
            The which he loved passing well.'
     love passing well.
@@ -2092,7 +2093,6 @@ Enter Horatio, Queen, and a Gentleman.
     Unmix'd with baser matter. Yes, by heaven!
     But never the offence. To bear all smooth and even,
     Will nothing stick Our person to arraign
-    again.
     I shall not look upon his like again.
          He never will come again.
          And will he not come again?
@@ -2106,6 +2106,7 @@ Enter Horatio, Queen, and a Gentleman.
     Now fear I this will give it start again;
                       Enter Ghost again.
     Would have reverted to my bow again,
+    again.
     Will bring him to his wonted way again,
   Ham. A murtherer and a villain!
     That one may smile, and smile, and be a villain;
@@ -2153,8 +2154,8 @@ Enter Horatio, Queen, and a Gentleman.
     Of entrance to a quarrel; but being in,
                   [Exit the Queen. Then] Exit Hamlet, tugging in
     Is very cunning in.
-                                                 A noise within.
     Give, me superfluous death.                  A noise within.
+                                                 A noise within.
                [Drum; trumpets sound; a piece goes off [within].
                                                  [March within.]
     Whiles rank corruption, mining all within,
@@ -2269,15 +2270,15 @@ Enter King, Rosencrantz, and Guildenstern.
 Enter King and Queen, with Rosencrantz and Guildenstern.
   King. Welcome, dear Rosencrantz and Guildenstern.
                Enter Rosencrantz and Guildenstern.
+                    Enter Rosencrantz and Guildenstern.
              Enter Rosencrantz and Guildenstern.
                 Enter Rosencrantz and Guildenstern.
-                    Enter Rosencrantz and Guildenstern.
             Enter Polonius, Rosencrantz, and Guildenstern.
-                            Exeunt Rosencrantz and Guildenstern]
-                          Exeunt [Rosencrantz and Guildenstern].
-                          [Exeunt Rosencrantz and Guildenstern.]
                             Exeunt Rosencrantz and Guildenstern.
+                            Exeunt Rosencrantz and Guildenstern]
                             [Exeunt Rosencrantz and Guildenstern
+                          [Exeunt Rosencrantz and Guildenstern.]
+                          Exeunt [Rosencrantz and Guildenstern].
   King. Thanks, Rosencrantz and gentle Guildenstern.
     Both countenance and excuse. Ho, Guildenstern!
     The cock, that is the trumpet to the morn,
@@ -2375,8 +2376,8 @@ Enter Hamlet and Horatio.
   Ber. Looks it not like the King? Mark it, Horatio.
   Mar. Question it, Horatio.
   Mar. Thou art a scholar; speak to it, Horatio.
-                                                   Exit Horatio.
                                                  [Exit Horatio.]  
+                                                   Exit Horatio.
     Or ever I had seen that day, Horatio!
   Ham. His beard was grizzled- no?
   Ham. O wonderful son, that can so stonish a mother! But is there no
@@ -2387,8 +2388,8 @@ Enter Hamlet and Horatio.
     me, whether you were sent for or no.  
     more than their even-Christen. Come, my spade! There is no
   Ham. That if you be honest and fair, your honesty should admit no
-    discovery, and your secrecy to the King and Queen moult no
     No.
+    discovery, and your secrecy to the King and Queen moult no
   Ros. Ay, that they do, my lord- Hercules and his load too.
   Ham. The point envenom'd too?
   Hor. Let him bless thee too.
@@ -2504,8 +2505,8 @@ Enter Hamlet and Horatio.
   Ghost. [beneath] Swear.
     Consent to swear.
   Ghost. Swear.
-    Swear.
                                                    [They swear.]
+    Swear.
     you nine year.
     Drabbing. You may go so far.
     he knew me not at first. He said I was a fishmonger. He is far
@@ -2521,8 +2522,8 @@ Enter Hamlet and Horatio.
     Will you do this? Keep close within your chamber.
   Ham. I beseech you remember.
   Bernardo, officer.
-  Marcellus, officer.
   Marcellus, Officer.
+  Marcellus, officer.
     That hurts by easing. But to the quick o' th' ulcer!
     And what's untimely done. [So haply slander-]
   Hor. Most like. It harrows me with fear and wonder.
@@ -2553,7 +2554,6 @@ Enter Hamlet and Horatio.
     entertainment than yours. You are welcome. But my uncle-father
   King. Conceit upon her father.
     Been thus encount'red. A figure like your father,
-    father?
   King. Not that I think you did not love your father;
   Hor. My lord, the King your father.
     To give these mourning duties to your father;
@@ -2568,6 +2568,7 @@ Enter Hamlet and Horatio.
   Ham. The King my father?
     would give you some violets, but they wither'd all when my father
     Most throughly for my father.
+    father?
   Laer. Where is my father?
     To draw him on to pleasures, and to gather
     The Frenchman gave you; bring you in fine together
@@ -2704,8 +2705,8 @@ Enter Hamlet and Horatio.
     Why the man dies.- I humbly thank you, sir.
   Pol. Marry, well said, very well said. Look you, sir,
   Ham. Hear you, sir!
-    God bless you, sir!
   Sailor. God bless you, sir.
+    God bless you, sir!
   Capt. They are of Norway, sir.
     Behind the arras hearing something stir,
   Ham. How absolute the knave is! We must speak by the card, or
@@ -2772,8 +2773,8 @@ Enter Hamlet and Horatio.
   Clown. A whoreson, mad fellow's it was. Whose do you think it was?
       In Mincing with his sword her husband's limbs,
   Pol. Good madam, stay awhile. I will be faithful.     [Reads.]  
-    Himself the primrose path of dalliance treads
                                                         [Reads.]
+    Himself the primrose path of dalliance treads
     But since he is better'd, we have therefore odds.
     And do not spread the compost on the weeds
     Thin settled age his sables and his weeds,
@@ -2935,12 +2936,12 @@ Enter two Clowns, [with spades and pickaxes].
     We'll make a solemn wager on your cunnings-
     O, this is the poison of deep grief; it springs
                        [Clown digs and] sings.
-  Oph. (sings)
-  Oph. (sings)
   Oph. (Sings)
   Oph. (sings)
-  Clown. (Sings)
+  Oph. (sings)
+  Oph. (sings)
   Clown. (sings)
+  Clown. (Sings)
     And more above, hath his solicitings,
     Save me and hover o'er me with your wings,
     If with too credent ear you list his songs,
@@ -3111,11 +3112,11 @@ Elsinore. The Castle. Another part of the fortifications.
   Guil. There are the players.
 Enter Hamlet and three of the Players.
                      Flourish for the Players.
+    With most miraculous organ, I'll have these Players
                      Enter four or five Players.
+  Ros. Madam, it so fell out that certain players
                                                  Exeunt Players.
   Players.
-    With most miraculous organ, I'll have these Players
-  Ros. Madam, it so fell out that certain players
     Till the last trumpet. For charitable prayers,
   Pol. Come, sirs.
   English Ambassadors.
@@ -3181,13 +3182,13 @@ Enter Hamlet and three of the Players.
     O heavens! is't possible a young maid's wits
   Clown. Faith, e'en with losing his wits.
     Even to the teeth and forehead of our faults,
-                                                    Attendants].
                   Colours, and Attendants.
                        Exeunt King and Queen, [with Attendants].
         Enter Hamlet and Guildenstern [with Attendants].
   King. Go seek him there. [To Attendants.]
   Lords, ladies, Officers, Soldiers, Sailors, Messengers, Attendants.
                                             [Exeunt Attendants.]
+                                                    Attendants].
     tenants.
     Yet here she is allow'd her virgin crants,
     As there are tongues, are hands, are accidents;
@@ -3233,27 +3234,27 @@ Elsinore. A room in the house of Polonius.
 Elsinore. A room in the house of Polonius.
   Laertes, son to Polonius.
   Ophelia, daughter to Polonius.
-                   Enter Polonius.
+  Reynaldo, servant to Polonius.
                         Enter Polonius.
-                            Enter Polonius.
-                         Enter Polonius.
                        Enter Polonius.  
+                         Enter Polonius.
+                            Enter Polonius.
+                   Enter Polonius.
                          [Lifts up the arras and sees Polonius.]
   King. Now, Hamlet, where's Polonius?
   King. Where is Polonius?
             [Makes a pass through the arras and] kills Polonius.
   King. Have you your father's leave? What says Polonius?
-                                                Exit [Polonius].
                                                 Exit [Polonius].  
                                                 [Exit Polonius.]
                                                        Polonius.
-  Reynaldo, servant to Polonius.
+                                                Exit [Polonius].
+    Marcellus?
                    Enter Horatio and Marcellus.
                     Enter Horatio and Marcellus.  
     If you do meet Horatio and Marcellus,
 Enter Hamlet, Horatio, and Marcellus.
   Ber. Welcome, Horatio. Welcome, good Marcellus.
-    Marcellus?
     Speak of it! Stay, and speak!- Stop it, Marcellus!
                          Enter Lucianus.
     For your desire to know what is between us,
@@ -3353,8 +3354,8 @@ Enter Hamlet, Horatio, and Marcellus.
            For and a shrouding sheet;
          O, methought there- a- was nothing- a- meet.
     (As I perchance hereafter shall think meet
-              For such a guest is meet.
            For such a guest is meet.
+              For such a guest is meet.
     When in one line two crafts directly meet.  
     counsel. Come, my coach! Good night, ladies. Good night, sweet
     And blow them at the moon. O, 'tis most sweet
@@ -3374,6 +3375,7 @@ Enter Ghost and Hamlet.
   Gentlemen. (within) Hamlet! Lord Hamlet!
     That I will speak to thee. I'll call thee Hamlet,
     Exchange forgiveness with me, noble Hamlet.
+                            'He that thou knowest thine, HAMLET.'
     The Queen carouses to thy fortune, Hamlet.
   King. 'Tis sweet and commendable in your nature, Hamlet,
     This gentle and unforc'd accord of Hamlet
@@ -3383,13 +3385,14 @@ Flourish. [Enter Claudius, King of Denmark, Gertrude the Queen, Hamlet,
   King. How fares our cousin Hamlet?
   Horatio, friend to Hamlet.
   Getrude, Queen of Denmark, mother to Hamlet.
+                                                          HAMLET.'
   Queen. No, no! the drink, the drink! O my dear Hamlet!
     Speak to her, Hamlet.
   King. Thy loving father, Hamlet.
-Enter Hamlet.
                           Enter Hamlet.
                          Enter Hamlet.
                            Enter Hamlet.
+Enter Hamlet.
     Was't Hamlet wrong'd Laertes? Never Hamlet.
   King. What, Gertrude? How does Hamlet?
                                            Ghost beckons Hamlet.
@@ -3397,15 +3400,13 @@ Enter Hamlet.
     No more, sweet Hamlet!
   Queen. Hamlet, Hamlet!
     Dar'd to the combat; in which our valiant Hamlet
-                                        [Exeunt all but Hamlet.]
                                         [Exeunt all but Hamlet.]  
-                                        Exeunt [all but Hamlet].
                                 Flourish. Exeunt all but Hamlet.
-                                                     'HAMLET.'
-                                                          HAMLET.'
-                            'He that thou knowest thine, HAMLET.'
+                                        Exeunt [all but Hamlet].
+                                        [Exeunt all but Hamlet.]
   Queen. Why, how now, Hamlet?  
   King. Ay, Hamlet.
+                                                     'HAMLET.'
     But you'll be secret?
 The Queen's closet.
   Pol. My lord, he's going to his mother's closet.
@@ -3524,6 +3525,7 @@ The Queen's closet.
     Therefore, since brevity is the soul of wit,
   Ham. It will not speak. Then will I follow it.
     It waves me forth again. I'll follow it.
+Exit.
     Adieu, adieu, adieu! Remember me.                      Exit.  
     Wherein I'll catch the conscience of the King.         Exit.
     My thoughts be bloody, or be nothing worth!            Exit.
@@ -3537,13 +3539,12 @@ The Queen's closet.
     ladies. Good night, good night.                         Exit
     Give you good night.                                   Exit.
     But that this folly douts it.                          Exit.
-Exit.
-Exit.
-Exit.
-Exit.
-Exit.
     To give them seals never, my soul, consent!             Exit.
       We beg your hearing patiently.                     [Exit.]
+Exit.
+Exit.
+Exit.
+Exit.
   King. We will try it.
   King. I do not think't.
     O heat, dry up my brains! Tears seven times salt
@@ -3607,26 +3608,26 @@ Lords Attendant.
     That has no relish of salvation in't-
     This is but scratch'd withal. I'll touch my point
   Ham. I think it be thine indeed, for thou liest in't.
+  Oph. Indeed, la, without an oath, I'll make an end on't!
     It hath the primal eldest curse upon't,
     From fashion of himself. What think you on't?
-    on't.
-  Oph. Indeed, la, without an oath, I'll make an end on't!
     What think you on't?
+    on't.
     I have sworn't.
     Should have kept short, restrain'd, and out of haunt
                                                          Exeunt.
                                                          Exeunt.
                                                          Exeunt.
-                                                         Exeunt.
-                                                         Exeunt.
-                                                         Exeunt.
-                                                         Exeunt.
-                                                         Exeunt.
-                                                         Exeunt.
                                                           Exeunt
+                                                         Exeunt.
+                                                         Exeunt.
+                                                         Exeunt.
+                                                         Exeunt.
     To him from whom you brought them.                   Exeunt.
     Madness in great ones must not unwatch'd go.         Exeunt.
     Where we shall find him most conveniently.           Exeunt.
+                                                         Exeunt.
+                                                         Exeunt.
     No reckoning made, but sent to my account
     Fix'd on the summit of the highest mount,
   Laer. I will do't!
@@ -3654,19 +3655,19 @@ Lords Attendant.
     him and drown him, he drowns not himself. Argal, he that is not
     Looking before and after, gave us not
   Ham. Nay, that follows not.
+    it not?
     Assume a virtue, if you have it not.
     Try what repentance can. What can it not?
   Ghost. If thou hast nature in thee, bear it not.
-    it not?
     might it not?
     continual practice. I shall win at the odds. But thou wouldst not
   Ham. Let her not walk i' th' sun. Conception is a blessing, but not
     insert in't, could you not?
+    Shall you my son. You have me, have you not
   Hor. In what particular thought to work I know not;
+    not.
   Ham. Nay, I know not.
   Ham. To what base uses we may return, Horatio! Why may not
-    not.
-    Shall you my son. You have me, have you not
   Ros. No indeed are they not.  
     I prithee, when thou seest that act afoot,
          With heraldry more dismal. Head to foot
@@ -3739,8 +3740,8 @@ Lords Attendant.
     To ears of flesh and blood. List, list, O, list!
     The ocean, overpeering of his list,
   Ham. Ay, marry, is't;
-                         Enter Ghost.
                         Enter Ghost.
+                         Enter Ghost.
   Ham. Alas, poor ghost!
                                                      Exit Ghost.
                                                      Exit Ghost.
@@ -3954,8 +3955,8 @@ Scene IV.
     That you have ta'en these tenders for true pay,
     And still your fingers on your lips, I pray.
     Look you, I'll go pray.
-    O, say!
   Pol. And then, sir, does 'a this- 'a does- What was I about to say?
+    O, say!
   Ber. Say-
     Art more engag'd! Help, angels! Make assay.  
     Or then, or then, with such or such; and, as you say,
@@ -4029,9 +4030,9 @@ Scene IV.
     they?
     This warlike volley.
     Than are dreamt of in your philosophy.
+  Ham. Why,
+  Ham. Why,
   Ham. Why?
-  Ham. Why,
-  Ham. Why,
     humanity so abominably.
   Ham. I embrace it freely,
     Subscrib'd it, gave't th' impression, plac'd it safely,
@@ -4161,7 +4162,6 @@ Scene IV.
   Queen. Thanks, Guildenstern and gentle Rosencrantz.  
                     Enter Rosencrantz.
   Ham. Buzz, buzz!
-  
   
   
   

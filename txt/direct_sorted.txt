@@ -851,8 +851,8 @@ Enter Fortinbras with his Army over the stage.
                      Enter four or five Players.
                       Enter Ghost again.
 Enter Ghost and Hamlet.
-                         Enter Ghost.
                         Enter Ghost.
+                         Enter Ghost.
         Enter Hamlet and Guildenstern [with Attendants].
                  Enter Hamlet and Horatio afar off.
 Enter Hamlet and Horatio.
@@ -860,12 +860,12 @@ Enter Hamlet and three of the Players.
 Enter Hamlet, Horatio, and Marcellus.
                  Enter Hamlet, reading on a book.
        Enter Hamlet, Rosencrantz, [Guildenstern,] and others.
+                         Enter Hamlet.
 Enter Hamlet.
                           Enter Hamlet.
-                         Enter Hamlet.
                            Enter Hamlet.
-                   Enter Horatio and Marcellus.
                     Enter Horatio and Marcellus.  
+                   Enter Horatio and Marcellus.
           Enter Horatio, Marcellus, and Bernardo.
 Enter Horatio, Queen, and a Gentleman.
 Enter Horatio with an Attendant.
@@ -876,8 +876,8 @@ Enter King and Queen, with Rosencrantz and Guildenstern.
     Enter King, Queen, Laertes, Osric, and Lords, with other
 Enter King, Queen, Polonius, Ophelia, Rosencrantz, Guildenstern, and Lords.
 Enter King, Rosencrantz, and Guildenstern.
-                    Enter King.
 Enter King.
+                    Enter King.
 Enter Laertes and Ophelia.
                     Enter Laertes with others.
                          Enter Lucianus.
@@ -887,19 +887,19 @@ Enter Laertes and Ophelia.
 Enter Polonius and Reynaldo.
             Enter Polonius, Rosencrantz, and Guildenstern.
               Enter Polonius, Voltemand, and Cornelius.
+                       Enter Polonius.  
+                         Enter Polonius.
+                            Enter Polonius.
                    Enter Polonius.
                         Enter Polonius.
-                            Enter Polonius.
-                         Enter Polonius.
-                       Enter Polonius.  
     Enter [priests with] a coffin [in funeral procession], King,
                       Enter Prologue.
 Enter Queen and Polonius.
                            Enter Queen.
-               Enter Rosencrantz and Guildenstern.
              Enter Rosencrantz and Guildenstern.
-                Enter Rosencrantz and Guildenstern.
                     Enter Rosencrantz and Guildenstern.
+               Enter Rosencrantz and Guildenstern.
+                Enter Rosencrantz and Guildenstern.
                     Enter Rosencrantz.
                           Enter Sailors.
     entertainment than yours. You are welcome. But my uncle-father
@@ -928,9 +928,9 @@ Enter two Sentinels-[first,] Francisco, [who paces up and down
     Exchange forgiveness with me, noble Hamlet.
     Excitements of my reason and my blood,
                               Exeunt all but Hamlet and Horatio.
+                                        Exeunt [all but Hamlet].
                                         [Exeunt all but Hamlet.]
                                         [Exeunt all but Hamlet.]  
-                                        Exeunt [all but Hamlet].
                                    Exeunt [all but the Captain].
                                             [Exeunt Attendants.]
                                                Exeunt Gentlemen.
@@ -941,10 +941,10 @@ Enter two Sentinels-[first,] Francisco, [who paces up and down
                                                  Exeunt Players.
                  Exeunt Polonius and Players [except the First].
                  Exeunt Rosencrantz and Guildenstern, [with some
-                            Exeunt Rosencrantz and Guildenstern]
-                          Exeunt [Rosencrantz and Guildenstern].
-                          [Exeunt Rosencrantz and Guildenstern.]
                             Exeunt Rosencrantz and Guildenstern.
+                          [Exeunt Rosencrantz and Guildenstern.]
+                          Exeunt [Rosencrantz and Guildenstern].
+                            Exeunt Rosencrantz and Guildenstern]
                             [Exeunt Rosencrantz and Guildenstern
                                  Exeunt Voltemand and Cornelius.
                                                          Exeunt.
@@ -1050,8 +1050,8 @@ Flourish. [Enter King and Queen, Rosencrantz and Guildenstern, cum aliis.
     For out o' doors he went without their help
          For some must watch, while some must sleep:
     (For so this side of our known world esteem'd him)
-              For such a guest is meet.
            For such a guest is meet.
+              For such a guest is meet.
     For that which thou hast done,- must send thee hence
     Forth at your eyes your spirits wildly peep;
     For the apparel oft proclaims the man,
@@ -1401,8 +1401,8 @@ Flourish. [Enter King and Queen, Rosencrantz and Guildenstern, cum aliis.
   Hamlet, son to the former, and nephew to the present king.
     Hamlet the Dane.                    [Leaps in after Laertes.
   Ham. Let the doors be shut upon him, that he may play the fool
-                                                     'HAMLET.'
                                                           HAMLET.'
+                                                     'HAMLET.'
   Ham. Look here upon th's picture, and on this,
   Ham. Madam, how like you this play?
   Ham. Make you a wholesome answer; my wit's diseas'd. But, sir, such
@@ -1572,9 +1572,9 @@ Flourish. [Enter King and Queen, Rosencrantz and Guildenstern, cum aliis.
   Ham. Why, then the Polack never will defend it.
   Ham. Why, then 'tis none to you; for there is nothing either good
   Ham. Why, what should be the fear?
+  Ham. Why,
+  Ham. Why,
   Ham. Why?
-  Ham. Why,
-  Ham. Why,
   Ham. With drink, sir?
   Ham. (within) Mother, mother, mother!
   Ham. Words, words, words.
@@ -2625,9 +2625,9 @@ Near Elsinore.
   Oph. Pray let's have no words of this; but when they ask, you what
   Oph. Pray you mark.
   Oph. Say you? Nay, pray You mark.
-  Oph. (sings)
-  Oph. (sings)
   Oph. (Sings)
+  Oph. (sings)
+  Oph. (sings)
   Oph. (sings)
   Oph. So please you, something touching the Lord Hamlet.  
   Oph. Still better, and worse.

@@ -13,33 +13,33 @@ struct String {
     int number = 0;
     size_t len = 0;
 
-    char *string_ptr = nullptr;
+    char *string_ptr = NULL;
 };
 
 struct Text {
     int nlines  = 0;
     size_t size = 0;
 
-    char *buffer    = nullptr;
-    String *strings = nullptr;
+    char *buffer    = NULL;
+    String *strings = NULL;
 };
 
 //------------------------------------------------------------------
 
 long file_size        (FILE *stream);              
 
-int count_lines         (char *buffer);
+int count_lines       (char *buffer);
 
-int text_read_to_buf    (Text *text, FILE *stream);
+int text_read_to_buf  (Text *text, FILE *stream);
 
-int string_alloc        (Text *text);
+int string_alloc      (Text *text);
 
-int text_fill_strings   (Text *text);
+int text_fill_strings (Text *text);
 
-int text_print          (Text *text, FILE *output);
+int text_print        (Text *text, FILE *output);
 
-void text_ctor          (Text *text);
+void text_ctor        (Text *text);
 
-void text_dtor          (Text *text);
+void text_dtor        (Text *text);
 
-int text_read           (Text *text, FILE *fpin);
+int text_read         (Text *text, FILE *fpin);

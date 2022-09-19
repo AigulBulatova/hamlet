@@ -15,9 +15,9 @@ int main()
     
     #endif
 
-    FILE* fpin = open_file ("txt/hamlet.txt", "rb");
+    FILE *fpin = open_file ("txt/hamlet.txt", "r");
     if (fpin == NULL) {
-        ERR_MSG ("Can not open file");     
+        ERR_MSG ("Can not open text file");     
         return F_OPEN_ERR;
     }
 
@@ -30,13 +30,13 @@ int main()
     err = close_file (fpin);
     if (err < 0) return err;
 
-    FILE* fpdir = open_file ("txt/direct_sorted.txt", "w");
+    FILE *fpdir = open_file ("txt/direct_sorted.txt", "w");
     if (fpdir == NULL) {
         ERR_MSG ("Can not open output file");
         return F_OPEN_ERR;
     }
 
-    FILE* fprev = open_file ("txt/reverse_sorted.txt", "w");
+    FILE *fprev = open_file ("txt/reverse_sorted.txt", "w");
     if (fprev == NULL) {
         ERR_MSG ("Can not open output file");
         return F_OPEN_ERR;

@@ -9,6 +9,7 @@ FILE *open_file (const char *filename, const char *mode)
         ERR_MSG ("Null pointer to filename");
         return NULL;
     }
+    
     if (mode == NULL) {
         ERR_MSG ("Null pointer to file mode");
         return NULL;

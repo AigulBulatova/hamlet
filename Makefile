@@ -51,7 +51,7 @@ obj/errors.o: errors/errors.cpp errors/errors.h general/general.h
 obj/general.o: general/general.cpp general/general.h
 	g++ general/general.cpp -c -o obj/general.o $(FLAGS)
 
-obj/my_sort.o: my_sort/my_sort.cpp my_sort/my_sort.h hamlet/hamlet.h
+obj/my_sort.o: my_sort/my_sort.cpp my_sort/my_sort.h hamlet/hamlet.h configs.h
 	g++ my_sort/my_sort.cpp -c -o obj/my_sort.o $(FLAGS)
 
 .PHONY: cleanup
