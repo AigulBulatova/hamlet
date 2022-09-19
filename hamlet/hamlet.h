@@ -10,22 +10,23 @@
 //------------------------------------------------------------------
 
 struct String { 
-    int number;
-    size_t len;
+    int number = 0;
+    size_t len = 0;
 
-    char *string_ptr;
+    char *string_ptr = nullptr;
 };
 
 struct Text {
-    int nlines;
-    size_t size;
+    int nlines  = 0;
+    size_t size = 0;
 
-    char *buffer;
-    String *strings;
+    char *buffer    = nullptr;
+    String *strings = nullptr;
 };
 
 //------------------------------------------------------------------
-size_t file_size        (FILE *stream);              
+
+long file_size        (FILE *stream);              
 
 int count_lines         (char *buffer);
 

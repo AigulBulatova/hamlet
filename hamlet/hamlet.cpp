@@ -4,7 +4,7 @@
 
 //------------------------------------------------------------------
 
-size_t file_size (FILE *stream)                 
+long file_size (FILE *stream)                 
 {
     if (stream == NULL) {
         ERR_MSG ("File  pointer is NULL");
@@ -24,7 +24,7 @@ size_t file_size (FILE *stream)
 
     rewind (stream);
 
-    return (size_t) size;
+    return size;
 }
 
 //------------------------------------------------------------------
@@ -40,13 +40,13 @@ int text_read_to_buf (Text *text, FILE *stream)
         return S_PTR_NULL_ERR;                                        
     }
 
-    text->size = file_size (stream);
-    if (text->size < 0) {
-        return (int) text->size;
+    long size = file_size (stream);
+    if (size < 0) {
+        return (int) size;
     }                 
+    text->size = (size_t) size;
 
     text->buffer = (char *) calloc (text->size + 1, sizeof(char));
-    
     log_message ("Allocated text buffer address is %p\n", text->buffer);
 
     if (text->buffer == NULL) {
@@ -55,7 +55,6 @@ int text_read_to_buf (Text *text, FILE *stream)
     }
 
     size_t read = fread (text->buffer, sizeof(char), text->size, stream);
-
     log_message ("%d symbols read by fread(). Size of the text is %d\n", read, text->size);
 
     if (read != text->size) {
@@ -97,13 +96,13 @@ int string_alloc (Text *text)
         return S_PTR_NULL_ERR;
     }
 
-    int err = count_lines (text->buffer);
-    if (err < 0) return err;
-
-    text->nlines = count_lines (text->buffer);
+    int nlines = count_lines (text->buffer);
+    if (nlines < 0)
+        return nlines;
+    
+    text->nlines = nlines;
 
     text->strings = (String *) calloc ((size_t)text->nlines, sizeof(String));
-
     log_message ("Allocated array of strings address is %p\n", text->strings);
     
     if (text->strings == NULL) {

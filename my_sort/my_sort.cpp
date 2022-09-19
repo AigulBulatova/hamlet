@@ -19,7 +19,7 @@ int direct_compare (const void *str1, const void *str2)
     int i = 0;
     int j = 0;
 
-    if(string1[i] == '\0' || string2[j] == '\0') {
+    if (string1[i] == '\0' || string2[j] == '\0') {
         return string2[j] - string1[i];
     }
 
@@ -130,44 +130,36 @@ int reverse_compare (const void *str1, const void *str2)
 int text_sort_and_print (Text *text, FILE *direct, FILE *reverse)
 {
     #ifdef USE_MY_SORT
-
-        my_qsort(text->strings, text->nlines,sizeof(text->strings[0]), &direct_compare);
-
-        int print = text_print(text, direct);
-        if (print < 0) return print;
-
-        my_qsort(text->strings, text->nlines,sizeof(text->strings[0]), &reverse_compare);
-
-        print = text_print(text, reverse);
-        if (print < 0) return print;
-
+        my_qsort (text->strings, text->nlines,sizeof(text->strings[0]), &direct_compare);
     #else
-
         qsort (text->strings, (size_t) text->nlines, sizeof(text->strings[0]), &direct_compare);
-
-        int print = text_print(text, direct);
-        if (print < 0) return print;
-
-        qsort (text->strings, (size_t) text->nlines, sizeof(text->strings[0]), &reverse_compare);
-
-        print = text_print(text, reverse);
-        if (print < 0) return print;
-
     #endif
+
+        int print = text_print (text, direct);
+        if (print < 0) return print;
+
+    #ifdef USE_MY_SORT
+        my_qsort (text->strings, text->nlines,sizeof(text->strings[0]), &reverse_compare);
+    #else
+        qsort (text->strings, (size_t) text->nlines, sizeof(text->strings[0]), &reverse_compare);
+    #endif
+
+        print = text_print (text, reverse);
+        if (print < 0) return print;
     
     return 0;
 }
 
 //------------------------------------------------------------------
 
-long my_partition (char* base, long left, long right, long size, int (*cmp) (const void*, const void*)) {
+long my_partition (char* base, long left, long right, long size, int (*compare) (const void*, const void*)) {
 
 	char* pivot = base + right;
 	long i = left - size;
 
 	for (long j = left; j <= right - size; j += size) {
 
-		if (cmp ((const void*)(base + j), (const void*)pivot) < 0) {
+		if (compare ((const void*) (base + j), (const void*) pivot) < 0) {
 
 			i += size;
 			swap (base + i, base + j, (size_t) size);
@@ -196,7 +188,7 @@ void my_qsort (void *base_el, long n, long size, int (*cmp) (const void* , const
 
 //------------------------------------------------------------------
 
-void swap (char* first, char* second, size_t size) {
+void swap (char* first, char* second, size_t size) {         
 
 	assert (first != NULL);
 	assert (second != NULL);

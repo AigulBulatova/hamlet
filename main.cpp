@@ -6,10 +6,12 @@
 
 int main()
 {
+    int err = 0;
+
     #ifdef LOGS 
         
-        int logs = open_log_file ();
-        if (logs < 0) return logs;
+        err = open_log_file ();
+        if (err < 0) return err;
     
     #endif
 
@@ -21,8 +23,6 @@ int main()
 
     Text text = {};
     text_ctor (&text);
-
-    int err = 0;
   
     err = text_read (&text, fpin);
     if (err < 0) return err;
@@ -55,8 +55,8 @@ int main()
 
     #ifdef LOGS
 
-        int close = close_log_file();
-        if (close < 0) return close;
+        err = close_log_file();
+        if (err < 0) return err;
 
     #endif
 
